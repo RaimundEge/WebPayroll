@@ -12,11 +12,16 @@
 */
 
 Route::get('/', 'HomeController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/employee', 'EmployeeController@index')->name('employee');
-Route::get('/employee/edit', 'EmployeeController@edit')->name('employee/edit');
-Route::get('/employee/create', 'EmployeeController@create')->name('employee/create');
-Route::get('/employee/delete', 'EmployeeController@delete')->name('employee/delete');
+Route::get('/empedit/{id}', 'EmployeeController@edit');
+Route::post('/empupdate/{id}', 'EmployeeController@update');
+Route::get('/empdelete/{id}', 'EmployeeController@delete');
+Route::post('/empdelete/{id}', 'EmployeeController@dodelete');
+Route::get('/empcreate', 'EmployeeController@create')->name('empcreate');
+Route::post('/empcreate', 'EmployeeController@docreate')->name('empcreate');
+
 Route::get('/project', 'ProjectController@index')->name('project');
 
 Route::get('/welcome', function () {

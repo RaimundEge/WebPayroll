@@ -43,7 +43,7 @@
 
     <hr/>
     <div class="container">
-        <p class="text-center"><a href="//laravel.com" target="_blank">Developed with PHP Laravel Framework</a> &nbsp; &copy; <a href=//www.ege.com>2018 Ege Consulting Inc.</a>
+        <p class="text-center">{{ config('app.name', 'Laravel') }}: <a href="//laravel.com" target="_blank">Developed with PHP Laravel Framework</a> &nbsp; &copy; <a href=//www.ege.com>2018 Ege Consulting Inc.</a>
         </p>
     </div>
     <!-- Scripts -->
