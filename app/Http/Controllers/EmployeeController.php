@@ -25,12 +25,12 @@ class EmployeeController extends Controller
     public function index()
     {
         $emps = Employee::all();
-        return view('emplist', ['message' => "", 'employees' => $emps]);
+        return view('employee/list', ['message' => "", 'employees' => $emps]);
     }
 
     public function edit($id) {
         $emp = Employee::find($id);
-        return view('empedit', ['message' => "", 'employee' => $emp]);
+        return view('employee/edit', ['message' => "", 'employee' => $emp]);
     }
 
     public function update(Request $request, $id) {
@@ -43,24 +43,24 @@ class EmployeeController extends Controller
         $emp->accountnumber = $request->accountnumber;
         $emp->save();
         $emps = Employee::all();
-        return view('emplist', ['message' => "Employee updated", 'employees' => $emps]);
+        return view('employee/list', ['message' => "Employee updated", 'employees' => $emps]);
     }
 
     public function delete($id) {
         $emp = Employee::find($id);
-        return view('empdelete', ['message' => "", 'employee' => $emp]);
+        return view('employee/delete', ['message' => "", 'employee' => $emp]);
     }
 
     public function dodelete($id) {
         $emp = Employee::find($id);
         $emp->delete();
         $emps = Employee::all();
-        return view('emplist', ['message' => "Employee deleted", 'employees' => $emps]);
+        return view('employee/list', ['message' => "Employee deleted", 'employees' => $emps]);
     } 
     
     public function create() {
         $emp = new Employee;
-        return view('empcreate', ['message' => "", 'employee' => $emp]);
+        return view('employee/create', ['message' => "", 'employee' => $emp]);
     } 
     
     public function docreate(Request $request) {
@@ -73,6 +73,6 @@ class EmployeeController extends Controller
         $emp->accountnumber = $request->accountnumber;
         $emp->save();
         $emps = Employee::all();
-        return view('emplist', ['message' => "new Employee created", 'employees' => $emps]);
+        return view('employee/list', ['message' => "new Employee created", 'employees' => $emps]);
     }   
 }

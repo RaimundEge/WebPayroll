@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     
-    <h1 class="my-3">Employee Managment</h1>
+    <h1 class="my-3">Employee Management</h1>
     <h3 class="my-3">Delete Employee Data</h3>
     
     <form method="POST" action="{{ '/empdelete/' . $employee->id }}">

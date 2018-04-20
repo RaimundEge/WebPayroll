@@ -40,6 +40,11 @@ class DatabaseSeeder extends Seeder
                                 'salary' => '0'
                             ]);
 
-        $this->command->info('employees table seeded!');
+        factory(App\Employee::class, 20)->create();
+
+        DB::table('projects')->delete();
+        factory(App\Project::class, 20)->create();
+
+        $this->command->info('DB tables seeded!');
     }
 }

@@ -19,10 +19,16 @@ Route::get('/empedit/{id}', 'EmployeeController@edit');
 Route::post('/empupdate/{id}', 'EmployeeController@update');
 Route::get('/empdelete/{id}', 'EmployeeController@delete');
 Route::post('/empdelete/{id}', 'EmployeeController@dodelete');
-Route::get('/empcreate', 'EmployeeController@create')->name('empcreate');
-Route::post('/empcreate', 'EmployeeController@docreate')->name('empcreate');
+Route::get('/empcreate', 'EmployeeController@create');
+Route::post('/empcreate', 'EmployeeController@docreate');
 
 Route::get('/project', 'ProjectController@index')->name('project');
+Route::get('/projcreate', 'ProjectController@create');
+Route::post('/projcreate', 'ProjectController@docreate');
+Route::get('/projedit/{id}', 'ProjectController@edit');
+Route::post('/projupdate/{id}', 'ProjectController@update');
+Route::get('/projdelete/{id}', 'ProjectController@delete');
+Route::post('/projdelete/{id}', 'ProjectController@dodelete');
 
 Route::get('/welcome', function () {
     return view('welcome');

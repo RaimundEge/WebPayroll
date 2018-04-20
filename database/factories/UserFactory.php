@@ -21,3 +21,21 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Employee::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'street' => $faker->streetAddress,
+        'city' => ($faker->city . ', ' . $faker->state),
+        'salary' => $faker->numberBetween(3000,9900) * 10,
+        'routingnumber' => $faker->bankRoutingNumber,
+        'accountnumber' => $faker->bankAccountNumber,
+    ];
+});
+
+$factory->define(App\Project::class, function (Faker $faker) {
+    return [
+        'title' => $faker->bs,
+        'expense' => $faker->numberBetween(1000,9000) * 100,
+    ];
+});

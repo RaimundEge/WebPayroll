@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     
-    <h1 class="my-3">Employee Managment</h1>
-    <h3 class="my-3">Create new Employee</h3>
+    <h1 class="my-3">Employee Management</h1>
+    <h3 class="my-3">Update Employee Data</h3>
     
-    <form method="POST" action="{{ '/empcreate/' . $employee->id }}">
+    <form method="POST" action="{{ '/empupdate/' . $employee->id }}">
         {{ csrf_field() }}
         <div class="form-group col-8 form-row">
             <label for="name" class="col-2">Name</label>
@@ -32,7 +32,7 @@
             <label for="accountnumber" class="col-2">Account #</label>
             <input type="text" class="form-control col" id="accountnumber" name="accountnumber" value="{{ $employee->accountnumber }}" required>
         </div>
-        <input type="submit" value="Create">
+        <input type="submit" value="Update">
     </form>
 
 </div>
