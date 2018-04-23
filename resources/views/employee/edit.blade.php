@@ -39,7 +39,7 @@
             </form>
         </div>
         <div class="col-6">
-            <h3 class="my-3" >Project Memberships</h3>               
+            <h3 class="my-3" >Projects that Employee is Member of</h3>               
             <table class="table">
             @foreach ($projects as $proj)
                 <tr><td>{{ $proj->title}}</td>
