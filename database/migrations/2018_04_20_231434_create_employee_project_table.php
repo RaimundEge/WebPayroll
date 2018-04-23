@@ -13,12 +13,12 @@ class CreateEmployeeProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('employee_project', function (Blueprint $table) {
+        Schema::create('wp_employee_project', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->foreign('employee_id')->references('id')->on('wp_employees');
             $table->unsignedInteger('project_id');
-            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('wp_projects');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateEmployeeProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee_project');
+        Schema::dropIfExists('wp_employee_project');
     }
 }

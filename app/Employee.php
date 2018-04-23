@@ -13,4 +13,5 @@ class Employee extends Model
     {
         return $this->belongsToMany('App\Project');
     }
+    protected $table = 'wp_employees';     
 }

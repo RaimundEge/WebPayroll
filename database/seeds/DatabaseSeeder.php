@@ -11,7 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('employees')->delete();
+        DB::table('wp_users')->delete();
+        factory(App\User::class, 5)->create();
+
+        DB::table('wp_employees')->delete();
 
         App\Employee::create([  'name' => 'John Doe', 
                                 'street' => '123 Main Street', 
@@ -42,7 +45,7 @@ class DatabaseSeeder extends Seeder
 
         factory(App\Employee::class, 20)->create();
 
-        DB::table('projects')->delete();
+        DB::table('wp_projects')->delete();
         factory(App\Project::class, 20)->create();
 
         $this->command->info('DB tables seeded!');

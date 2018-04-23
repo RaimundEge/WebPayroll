@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('wp_projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->double('expense', 8, 2);
@@ -28,6 +28,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('wp_projects');
     }
 }

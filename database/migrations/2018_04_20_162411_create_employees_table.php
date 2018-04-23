@@ -13,7 +13,7 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('wp_employees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('street');
@@ -32,6 +32,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('wp_employees');
     }
 }
